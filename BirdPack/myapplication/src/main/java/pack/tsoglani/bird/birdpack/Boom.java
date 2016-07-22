@@ -16,10 +16,7 @@ private Activity context;
 		// TODO Auto-generated constructor stub
 	}
 
-	public void onDraw(Canvas canvas) {
-		super.onDraw(canvas);
 
-	}
 
 	public void setminMax(int minX, int minY, int maxX, int maxY) {
 		this.maxX = maxX;

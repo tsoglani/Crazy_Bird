@@ -5,6 +5,7 @@ package pack.tsoglani.bird.birdpack;
 
 import android.graphics.Canvas;
 import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.view.ViewGroup;
 
 public class Bird extends ViewGroup implements Runnable {
@@ -18,14 +19,18 @@ public class Bird extends ViewGroup implements Runnable {
 private int extraSleep = 0;
 	private boolean isSleedRising = false;
 	private final int maxSleep = 14;
-
+	private static Drawable drawable;
+private static int drawableID=R.drawable.bird2;
 	public Bird(GameActivity context) {
 		super(context);
 		this.context = (GameActivity) context;
 
 		distance = 0;
-		setBackgroundResource(R.drawable.bird2);
-		setWillNotDraw(false);
+		if(drawable==null)
+		drawable = getResources().getDrawable(R.drawable.bird2);
+//		setBackgroundResource(drawableID);
+		setBackground(drawable);
+//		setWillNotDraw(false);
 		setX(this.context.getWindowManager().getDefaultDisplay().getWidth() / 3);
 	}
 
@@ -91,10 +96,7 @@ private int extraSleep = 0;
 
 	}
 
-	protected void onDraw(Canvas canvas) {
-		super.onDraw(canvas);
 
-	}
 
 	public Rect getBounds() {
 		int x = (int) getX() + getWidth() / 4, y = (int) getY() + 3

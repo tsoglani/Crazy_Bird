@@ -67,13 +67,7 @@ public class Coin extends View implements Runnable {
 		};
 	}
 
-	public void onDraw(Canvas canvas) {
-		super.onDraw(canvas);
-		// Paint paint = new Paint();
-		// paint.setColor(Color.YELLOW);
-		// canvas.drawCircle(getWidth() / 2, getWidth() / 2, getWidth() / 2,
-		// paint);
-	}
+
 
 	public Rect getBounds() {
 		Rect rec = new Rect((int) getX(), (int) getY(), (int) getX()

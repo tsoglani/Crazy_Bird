@@ -35,8 +35,11 @@ public class Egg extends View implements Runnable, Enemy {
 
 	@Override
 	public boolean intersect(Rect rec) {
+		try{
 		if (getBounds().intersect(rec)) {
 			return true;
+		}}catch (Exception e){
+			return false;
 		}
 		return false;
 	}

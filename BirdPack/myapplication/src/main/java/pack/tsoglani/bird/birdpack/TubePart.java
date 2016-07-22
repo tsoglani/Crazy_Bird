@@ -66,6 +66,9 @@ public class TubePart extends ViewGroup {
 		this.height = height;
 	}
 
+
+
+
 	public void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
 		Paint paint = new Paint();
@@ -77,6 +80,7 @@ public class TubePart extends ViewGroup {
 				getHeight() / (float) bmpOriginal.getHeight());
 		if (location.equals(TOP)) {
 			canvas.rotate(180, getWidth() / 2, getHeight() / 2);
+
 		}
 		
 		canvas.drawBitmap(bmpOriginal, matrix, paint);

@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -369,20 +370,11 @@ public class GamePlay extends ViewGroup implements Runnable {
 				// "You create a new Hi Score ..  your distance was "
 				// + Bird.recordDistance + " your new is  " + Bird.distance,
 				// Toast.LENGTH_LONG);
-				alert2 = new AlertDialog.Builder(context);
-				alert2.setPositiveButton(
-						" Congratulations , you create a new Hi score "
-								+ Integer.toString(bird.distance)
-								+ " , your old one was "
-								+ Integer.toString(Bird.recordDistance), null);
-				// alert2.setPositiveButton("OK", null);
 
-				Bird.recordDistance = bird.distance;
-				// alert.setMessage(" Congratulations , you create a new Hi score "+Integer.toString(
-				// Bird.recordDistance) +" .. Do you want to try again ? ");
-				if (alert2 != null) {
-					alert2.show();
-				}
+				Toast.makeText(getContext(), " Congratulations , you create a new Hi score "
+						+ Integer.toString(bird.distance)
+						+ " , your old one was "
+						+ Integer.toString(Bird.recordDistance), Toast.LENGTH_SHORT).show();
 				new Database(getContext()).updateMaxDistance();
 			}
 
