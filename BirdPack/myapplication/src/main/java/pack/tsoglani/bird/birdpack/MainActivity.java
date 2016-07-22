@@ -1,4 +1,4 @@
-package pack.tsoglani.bird.myapplication;
+package pack.tsoglani.bird.birdpack;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -9,9 +9,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.wearable.view.WatchViewStub;
 import android.util.Log;
-import android.view.Menu;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -30,7 +28,7 @@ FrameLayout layout;
             @Override
             public void onLayoutInflated(WatchViewStub stub) {
 //                mTextView = (TextView) stub.findViewById(R.id.text);
-                setRequestedOrientation(GameActivity.oriantation);
+//                setRequestedOrientation(GameActivity.oriantation);
                 init();
 
                 UpgradeSelectedItemMenu.addAllUpgrades();

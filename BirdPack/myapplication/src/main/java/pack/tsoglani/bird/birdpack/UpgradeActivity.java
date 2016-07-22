@@ -1,4 +1,4 @@
-package pack.tsoglani.bird.myapplication;
+package pack.tsoglani.bird.birdpack;
 
 import android.app.Activity;
 import android.content.Context;
@@ -28,7 +28,7 @@ public class UpgradeActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setRequestedOrientation(GameActivity.oriantation);
+//		setRequestedOrientation(GameActivity.oriantation);
 		init();
 		setContentView(layout);
 		layout.addView(scroll);

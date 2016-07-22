@@ -1,4 +1,4 @@
-package pack.tsoglani.bird.myapplication;
+package pack.tsoglani.bird.birdpack;
 
 import android.app.Activity;
 import android.content.Context;
@@ -45,7 +45,7 @@ public class MissionActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setRequestedOrientation(GameActivity.oriantation);
+//		setRequestedOrientation(GameActivity.oriantation);
 		init();
 		setContentView(layout);
 		addScroll();
@@ -102,7 +102,7 @@ public class MissionActivity extends Activity {
 
 		scrollLayout.setLayoutParams(new LayoutParams(
 				LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-		scrollLayout.setOrientation(LinearLayout.VERTICAL);
+//		scrollLayout.setOrientation(LinearLayout.VERTICAL);
 		layout.addView(scroll);
 		scroll.addView(scrollLayout);
 

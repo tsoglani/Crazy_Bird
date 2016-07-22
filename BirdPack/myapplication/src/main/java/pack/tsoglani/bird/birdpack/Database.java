@@ -1,4 +1,4 @@
-package pack.tsoglani.bird.myapplication;
+package pack.tsoglani.bird.birdpack;
 
 
 import android.content.ContentValues;

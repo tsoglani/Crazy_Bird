@@ -1,4 +1,4 @@
-package pack.tsoglani.bird.myapplication;
+package pack.tsoglani.bird.birdpack;
 
 import android.app.Activity;
 import android.content.Context;
@@ -57,7 +57,7 @@ public class UpgradeSelectedItemMenu extends Activity {
 		if (GamePlay.birdUpdatesUsing.isEmpty()) {
 			GamePlay.birdUpdatesUsing.add(GamePlay.Clasic);
 		}
-		setRequestedOrientation(GameActivity.oriantation);
+//		setRequestedOrientation(GameActivity.oriantation);
 		upgratedItems.add(GamePlay.Clasic);
 		layout = new RelativeLayout(this);
 		setContentView(layout);

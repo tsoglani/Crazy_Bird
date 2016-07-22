@@ -1,4 +1,4 @@
-package pack.tsoglani.bird.myapplication;
+package pack.tsoglani.bird.birdpack;
 
 
 import android.app.Activity;
@@ -19,7 +19,7 @@ import android.widget.RelativeLayout;
 
 public class GameActivity extends Activity {
 	private RelativeLayout layout;
-	public static int oriantation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
+//	public static int oriantation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
 	public static Point Size = new Point();
 	public  static boolean isExited=false;
 	private PowerManager.WakeLock screenLock;
@@ -28,7 +28,7 @@ public static Activity activity;
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		isExited=false;
-		setRequestedOrientation(oriantation);
+//		setRequestedOrientation(oriantation);
 		activity=this;
 		layout = new RelativeLayout(this);
 		this.getWindowManager().getDefaultDisplay().getRealSize(Size);
