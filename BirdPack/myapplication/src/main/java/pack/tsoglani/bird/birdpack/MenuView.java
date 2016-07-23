@@ -55,9 +55,9 @@ public class MenuView extends ViewGroup {
 	private void generateButtons(LinearLayout layout) {
 		addMenuButtons(layout, "New Game");
 		addMenuButtons(layout, "Upgrades");
-		addMenuButtons(layout, "Achievements");
+//		addMenuButtons(layout, "Achievements");
 		// addMenuButtons( layout, "High Scores");
-		addMenuButtons(layout, "Info");
+//		addMenuButtons(layout, "Info");
 		addMenuButtons(layout, "Exit");
 	}
 

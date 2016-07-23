@@ -88,6 +88,11 @@ public class GamePlay extends ViewGroup implements Runnable {
 		// if
 		// (BirdUpdates.equals(BETTER_CONTROL)||birdUpdatesUsing.contains(BETTER_CONTROL))
 		// {
+		birdUpdatesUsing.clear();
+		birdUpdatesUsing.add(Master_CONTROL);
+		birdUpdatesUsing.add(DelayEnemies);
+		birdUpdatesUsing.add(DelayEnemies);
+
 		if (birdUpdatesUsing.contains(Master_CONTROL)) {
 			hasSuperControll = true;
 		} else if (birdUpdatesUsing.contains(BETTER_CONTROL)) {
@@ -108,8 +113,8 @@ public class GamePlay extends ViewGroup implements Runnable {
 		// (BirdUpdates.equals(DelayEnemies)||birdUpdatesUsing.contains(DelayEnemies))
 		// {
 		if (birdUpdatesUsing.contains(DelayEnemies)) {
-			gameSleep = (int) (5.0 * gameSleep / 3);
-			eggSleep = (int) (5.0 * eggSleep / 4);
+			gameSleep = (int) (5.0 * gameSleep / 2);
+			eggSleep = (int) (5.0 * eggSleep / 2);
 		}
 		eggPointer = new View(context) {
 
