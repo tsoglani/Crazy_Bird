@@ -401,9 +401,7 @@ public class GamePlay extends ViewGroup implements Runnable {
 					context.runOnUiThread(new Thread() {
 						public void run() {
 							GamePlay.this.removeAllViews();
-							addView(newGameButton);
-							addView(menuButton);
-							addView(exitButton);
+							context.finish();
 						}
 					});
 				}

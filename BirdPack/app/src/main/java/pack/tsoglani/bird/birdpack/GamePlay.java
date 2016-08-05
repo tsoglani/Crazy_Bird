@@ -48,7 +48,7 @@ public class GamePlay extends ViewGroup implements Runnable {
 	public static int gameSleep = defGameSleep, birdSleep = defBirdSleep,
 			eggSleep = defEggSleep, birdSleepToFall = difBirdSleepToFall;
 	public static int eggRation;
-	private int tubeRation =2500, eggPointerColor = 0,
+	private int tubeRation =800, eggPointerColor = 0,
 			coinRation = tubeRation;
 	private Egg[] eggs = new Egg[3];// egg1, egg2;
 	private Coin[] coins = new Coin[3];// coin1, coin2, coin3;
