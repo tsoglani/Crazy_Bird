@@ -97,17 +97,17 @@ public class GamePlay extends ViewGroup implements Runnable {
 		}
 		// if (BirdUpdates.equals(Faster)||birdUpdatesUsing.contains(Faster)) {
 		if (birdUpdatesUsing.contains(Faster)) {
-			gameSleep = (int) (gameSleep / 2);
-			birdSleep = (int) (birdSleep / 2);
-			eggSleep = (int) (eggSleep / 1.1);
-			birdSleepToFall = (int) (birdSleepToFall / 2);
+			gameSleep = (int) (defGameSleep / 2);
+			birdSleep = (int) (defBirdSleep / 2);
+			eggSleep = (int) (defEggSleep / 1.1);
+			birdSleepToFall = (int) (difBirdSleepToFall / 2);
 		}
 		// if
 		// (BirdUpdates.equals(DelayEnemies)||birdUpdatesUsing.contains(DelayEnemies))
 		// {
 		if (birdUpdatesUsing.contains(DelayEnemies)) {
-			gameSleep = (int) (5.0 * gameSleep / 3);
-			eggSleep = (int) (5.0 * eggSleep / 4);
+			gameSleep = (int) (5.0 * defGameSleep / 3);
+			eggSleep = (int) (5.0 * defGameSleep / 4);
 		}
 		eggPointer = new View(context) {
 

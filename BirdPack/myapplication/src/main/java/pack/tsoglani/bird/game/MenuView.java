@@ -13,7 +13,6 @@ import android.widget.RelativeLayout;
 
 public class MenuView extends ViewGroup {
 	private MainActivity context;
-	private boolean isPlaying = false;
 
 	public MenuView(MainActivity context) {
 		super(context);
@@ -79,10 +78,7 @@ public class MenuView extends ViewGroup {
 		public void onClick(View arg0) {
 			Button b = (Button) arg0;
 			if (b.getText().equals("New Game")) {
-				if (isPlaying) {
-					return;
-				}
-				isPlaying = true;
+
 				context.startActivity(new Intent(context, GameActivity.class));
 			} else if (b.getText().equals("Exit")) {
 				AlertDialog.Builder alert;

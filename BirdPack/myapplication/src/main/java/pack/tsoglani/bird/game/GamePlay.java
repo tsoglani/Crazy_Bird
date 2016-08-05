@@ -43,13 +43,13 @@ public class GamePlay extends ViewGroup implements Runnable {
 //	public View eggPointer;
 	// public static String BirdUpdates = Clasic;
 	public static ArrayList<String> birdUpdatesUsing = new ArrayList<String>();
-	private static final int defGameSleep = 3, defBirdSleep = 2,
+	private static final int defGameSleep = 4, defBirdSleep = 2,
 			defEggSleep = 2;
 	private static int difBirdSleepToFall = 230;
 	public static int gameSleep = defGameSleep, birdSleep = defBirdSleep,
 			eggSleep = defEggSleep, birdSleepToFall = difBirdSleepToFall;
 	public static int eggRation;
-	private int tubeRation = 800, eggPointerColor = 0,
+	private int tubeRation = 900, eggPointerColor = 0,
 			coinRation = tubeRation;
 	private Egg[] eggs = new Egg[3];// egg1, egg2;
 //	private Coin[] coins = new Coin[3];// coin1, coin2, coin3;
@@ -91,7 +91,7 @@ public class GamePlay extends ViewGroup implements Runnable {
 		birdUpdatesUsing.clear();
 		birdUpdatesUsing.add(Master_CONTROL);
 		birdUpdatesUsing.add(DelayEnemies);
-		birdUpdatesUsing.add(DelayEnemies);
+		birdUpdatesUsing.add(Faster);
 
 		if (birdUpdatesUsing.contains(Master_CONTROL)) {
 			hasSuperControll = true;
@@ -104,17 +104,17 @@ public class GamePlay extends ViewGroup implements Runnable {
 		}
 		// if (BirdUpdates.equals(Faster)||birdUpdatesUsing.contains(Faster)) {
 		if (birdUpdatesUsing.contains(Faster)) {
-			gameSleep = (int) (gameSleep / 2);
-			birdSleep = (int) (birdSleep / 2);
-			eggSleep = (int) (eggSleep / 1.1);
-			birdSleepToFall = (int) (birdSleepToFall / 2);
+			gameSleep = (int) (defGameSleep / 2);
+			birdSleep = (int) (defBirdSleep / 2);
+			eggSleep = (int) (defEggSleep / 1.1);
+			birdSleepToFall = (int) (difBirdSleepToFall / 2);
 		}
 		// if
 		// (BirdUpdates.equals(DelayEnemies)||birdUpdatesUsing.contains(DelayEnemies))
 		// {
 		if (birdUpdatesUsing.contains(DelayEnemies)) {
-			gameSleep = (int) (5.0 * gameSleep / 2);
-			eggSleep = (int) (5.0 * eggSleep / 2);
+			gameSleep = (int) (5.0 * defGameSleep / 2);
+			eggSleep = (int) (5.0 * defEggSleep / 2);
 		}
 //		eggPointer = new View(context) {
 //
