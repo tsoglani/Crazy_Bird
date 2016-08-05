@@ -82,6 +82,8 @@ public static Activity activity;
 		super.onStop();
 		isExited=true;
 		screenLock.release();
+		GamePlay.bird=null;
+		GamePlay.enemies.clear();
 	}
 	@Override
 	protected void onResume() {

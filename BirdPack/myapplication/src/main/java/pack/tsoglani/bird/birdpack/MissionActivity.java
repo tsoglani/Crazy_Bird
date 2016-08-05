@@ -55,14 +55,14 @@ public class MissionActivity extends Activity {
 	}
 
 	private void generateMissions() {
-		addMisiion(FIRST_COIN);
+//		addMisiion(FIRST_COIN);
 		addMisiion(DO_100_METER);
 		addMisiion(PASS_50_TUBES_IN_ONE_GAME);
 		addMisiion(PASS_50_EGGS_IN_ONE_GAME);
 		addMisiion(DO_300_METER);
-		addMisiion(COLLECT_50_Coins_In_One_Game);
-		addMisiion(COLLECT_ALL_UPGRADES);
-		addMisiion(COLLECT_100_Coins_IN_ONE_GAME);
+//		addMisiion(COLLECT_50_Coins_In_One_Game);
+//		addMisiion(COLLECT_ALL_UPGRADES);
+//		addMisiion(COLLECT_100_Coins_IN_ONE_GAME);
 		addMisiion(DO_500_METER);
 	}
 
@@ -105,15 +105,16 @@ public class MissionActivity extends Activity {
 //		scrollLayout.setOrientation(LinearLayout.VERTICAL);
 		layout.addView(scroll);
 		scroll.addView(scrollLayout);
-
-		scroll.setOnTouchListener(new OnSwipeTouchListener(getApplication()));
-		layout.setOnTouchListener(new OnSwipeTouchListener(getApplication()));
+		scrollLayout.setOrientation(LinearLayout.VERTICAL);
+//		scroll.setOnTouchListener(new OnSwipeTouchListener(getApplication()));
+//		layout.setOnTouchListener(new OnSwipeTouchListener(getApplication()));
 	}
 
 	private void addMissions() {
 
 		for (String str : allMissions) {
 			TextView text = new TextView(this);
+			Log.e("Mission",str);
 			text.setText(str);
 			if (!completeMissions.contains(str)) {
 				text.setBackgroundColor(this.getResources().getColor(
@@ -129,7 +130,7 @@ public class MissionActivity extends Activity {
 			layoutParams.setMargins(0, getWindowManager().getDefaultDisplay()
 					.getHeight() / 80, 0, getWindowManager()
 					.getDefaultDisplay().getHeight() / 80);
-			scrollLayout.addView(text, layoutParams);
+			scrollLayout.addView(text,layoutParams);
 			textViewMisions.add(text);
 		}
 	}

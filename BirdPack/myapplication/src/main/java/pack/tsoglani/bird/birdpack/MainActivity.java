@@ -9,6 +9,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.wearable.view.WatchViewStub;
 import android.util.Log;
+import android.view.Gravity;
 import android.widget.FrameLayout;
 
 import java.io.FileNotFoundException;
@@ -130,7 +131,7 @@ FrameLayout layout;
 
     private void init() {
         layout = new FrameLayout(this);
-
+        layout.setForegroundGravity(Gravity.CENTER);
     }
 
 

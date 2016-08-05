@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class GamePlay extends ViewGroup implements Runnable {
-	private static Bird bird;
+	protected static Bird bird;
 	public static ArrayList<Enemy> enemies;
 	public static int width, height;
 	private GameActivity context;
@@ -40,19 +40,19 @@ public class GamePlay extends ViewGroup implements Runnable {
 			COIN = "New Coin", SMALLER_JUMP="Smaller Jump",BETTER_CONTROL = "Super Control",
 			Master_CONTROL = "Master Control";
 	public static String GeneraUpdates = Clasic;
-	public View eggPointer;
+//	public View eggPointer;
 	// public static String BirdUpdates = Clasic;
 	public static ArrayList<String> birdUpdatesUsing = new ArrayList<String>();
-	private static final int defGameSleep = 4, defBirdSleep = 2,
-			defEggSleep = 4;
+	private static final int defGameSleep = 3, defBirdSleep = 2,
+			defEggSleep = 2;
 	private static int difBirdSleepToFall = 230;
 	public static int gameSleep = defGameSleep, birdSleep = defBirdSleep,
 			eggSleep = defEggSleep, birdSleepToFall = difBirdSleepToFall;
 	public static int eggRation;
-	private int tubeRation = 2500, eggPointerColor = 0,
+	private int tubeRation = 800, eggPointerColor = 0,
 			coinRation = tubeRation;
 	private Egg[] eggs = new Egg[3];// egg1, egg2;
-	private Coin[] coins = new Coin[3];// coin1, coin2, coin3;
+//	private Coin[] coins = new Coin[3];// coin1, coin2, coin3;
 
 	public GamePlay(final GameActivity context) {
 		super(context);
@@ -116,37 +116,37 @@ public class GamePlay extends ViewGroup implements Runnable {
 			gameSleep = (int) (5.0 * gameSleep / 2);
 			eggSleep = (int) (5.0 * eggSleep / 2);
 		}
-		eggPointer = new View(context) {
-
-			public void onDraw(Canvas canvas) {
-				super.onDraw(canvas);
-				Paint paint = new Paint();
-
-				if (eggPointerColor == 0) {
-					paint.setColor(Color.RED);
-				} else {
-					paint.setColor(eggPointerColor);
-				}
-				canvas.drawCircle(getWidth() / 2, getHeight() / 2,
-						getWidth() / 2, paint);
-				paint.setColor(Color.WHITE);
-				canvas.drawCircle(getWidth() / 2, getHeight() / 2,
-						getWidth() / 2 - 3, paint);
-
-				if (eggPointerColor == 0) {
-					paint.setColor(Color.RED);
-				} else {
-					paint.setColor(eggPointerColor);
-				}
-				paint.setTextSize(getWidth() / 2);
-				canvas.drawText("X", getWidth() / 3, 2 * getHeight() / 3, paint);
-
-			}
-		};
+//		eggPointer = new View(context) {
+//
+//			public void onDraw(Canvas canvas) {
+//				super.onDraw(canvas);
+//				Paint paint = new Paint();
+//
+//				if (eggPointerColor == 0) {
+//					paint.setColor(Color.RED);
+//				} else {
+//					paint.setColor(eggPointerColor);
+//				}
+//				canvas.drawCircle(getWidth() / 2, getHeight() / 2,
+//						getWidth() / 2, paint);
+//				paint.setColor(Color.WHITE);
+//				canvas.drawCircle(getWidth() / 2, getHeight() / 2,
+//						getWidth() / 2 - 3, paint);
+//
+//				if (eggPointerColor == 0) {
+//					paint.setColor(Color.RED);
+//				} else {
+//					paint.setColor(eggPointerColor);
+//				}
+//				paint.setTextSize(getWidth() / 2);
+//				canvas.drawText("X", getWidth() / 3, 2 * getHeight() / 3, paint);
+//
+//			}
+//		};
 		init();
-		for (int i = 0; i < coins.length; i++) {
-			coins[i] = new Coin(context);
-		}
+//		for (int i = 0; i < coins.length; i++) {
+//			coins[i] = new Coin(context);
+//		}
 		// coin1 = new Coin(context);
 		// coin2 = new Coin(context);
 		// coin3 = new Coin(context);
@@ -182,34 +182,34 @@ public class GamePlay extends ViewGroup implements Runnable {
 		// gif_view.setY(100);
 	}
 
-	public void visibleEggPointer() {
-		context.runOnUiThread(new Thread() {
-			public void run() {
-				eggPointer.setVisibility(VISIBLE);
-			}
-		});
-
-	}
-
-	public void invisibleEggPointer() {
-		context.runOnUiThread(new Thread() {
-			public void run() {
-				eggPointer.setVisibility(INVISIBLE);
-			}
-		});
-
-	}
-
-	public void setEggPointerColor(final int color) {
-		context.runOnUiThread(new Thread() {
-			public void run() {
-				eggPointerColor = color;
-				// eggPointer.postInvalidate();
-				// eggPointer.setBackgroundColor(color);
-			}
-		});
-
-	}
+//	public void visibleEggPointer() {
+//		context.runOnUiThread(new Thread() {
+//			public void run() {
+//				eggPointer.setVisibility(VISIBLE);
+//			}
+//		});
+//
+//	}
+//
+//	public void invisibleEggPointer() {
+//		context.runOnUiThread(new Thread() {
+//			public void run() {
+//				eggPointer.setVisibility(GONE);
+//			}
+//		});
+//
+//	}
+//
+//	public void setEggPointerColor(final int color) {
+//		context.runOnUiThread(new Thread() {
+//			public void run() {
+//				eggPointerColor = color;
+//				// eggPointer.postInvalidate();
+//				// eggPointer.setBackgroundColor(color);
+//			}
+//		});
+//
+//	}
 
 	private void gameOverMenuButtonsListeners() {
 		newGameButton.setOnClickListener(new OnClickListener() {
@@ -466,7 +466,7 @@ public class GamePlay extends ViewGroup implements Runnable {
 	}
 
 	private void init() {
-		Coin.money = 0;
+//		Coin.money = 0;
 		enemies = new ArrayList<Enemy>();
 		Egg.eggs.removeAll(Egg.eggs);
 		for (int i = 0; i < eggs.length; i++) {
@@ -474,12 +474,10 @@ public class GamePlay extends ViewGroup implements Runnable {
 		}
 		// egg1 = new Egg(context);
 		// egg2 = new Egg(context);
-		coinsCollected = Integer.toString(Coin.money);
+//		coinsCollected = Integer.toString(Coin.money);
 		isGameOver = false;
 		bird = new Bird(context);
 		addView(bird);
-		addView(eggPointer);
-		this.invisibleEggPointer();
 		context.runOnUiThread(new Thread() {
 
 			public void run() {
@@ -698,14 +696,6 @@ public class GamePlay extends ViewGroup implements Runnable {
 
 					new Thread(egg).start();
 				}
-			} else if (v instanceof Coin) {
-				Coin coin = (Coin) v;
-				if (!coin.isRunning()) {
-					v.layout(getWidth(), 0, getWidth() + getWidth() / 15,
-							+getWidth() / 15);
-
-					new Thread(coin).start();
-				}
 			} else if (v == newGameButton) {
 				v.layout(getWidth()/2 -getWidth()/4, getHeight() / 20,  getWidth()/2 +getWidth()/4, getHeight() / 20 + getHeight() / 4);
 			} else if (v == menuButton) {
@@ -717,9 +707,6 @@ public class GamePlay extends ViewGroup implements Runnable {
 						+ getHeight() / 4, getWidth()/2 +getWidth()/4,
 						getHeight() / 19 + getHeight() / 4 + getHeight() / 4
 								+ getHeight() / 4);
-			} else if (v == eggPointer) {
-				v.layout(getWidth() - getWidth() / 20, 0, getWidth(),
-						getHeight() / 20);
 			}
 		}
 
@@ -754,25 +741,6 @@ public class GamePlay extends ViewGroup implements Runnable {
 		return randomHeight;
 	}
 
-	private void createCoin() {
-		try {
-			for (Coin coin : coins) {
-				if (!coin.isRunning()) {
-					if (!cointainsView(coin)) {
-						addView(coin);
-					}
-					coin.newGame();
-					coin.setBird(bird);
-					coin.setGamePlay(this);
-					coin.setY(getRandomHeight());
-					// new Thread(coin1).start();
-					break;
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} catch (Error e) {
-		}
 		/*
 		 * if (!coin1.isRunning()) { if (!cointainsView(coin1)) {
 		 * addView(coin1); } coin1.newGame(); coin1.setBird(bird);
@@ -787,7 +755,7 @@ public class GamePlay extends ViewGroup implements Runnable {
 		 * Thread(coin2).start(); } } catch (Exception e) { e.printStackTrace();
 		 * } catch (Error e) { }
 		 */
-	}
+//	}
 
 	private boolean cointainsView(View v) {
 		boolean contains = false;
@@ -817,11 +785,6 @@ public class GamePlay extends ViewGroup implements Runnable {
 						if (isGameOver||GameActivity.isExited) {
 							break;
 						}
-						context.runOnUiThread(new Thread() {
-							public void run() {
-								createCoin();
-							}
-						});
 
 						Thread.sleep(coinRation);
 					} catch (InterruptedException e) {
@@ -934,7 +897,7 @@ public class GamePlay extends ViewGroup implements Runnable {
 				}
 				int extra = 0;
 
-				extra = 3000 - bird.getDistance() * 10;
+				extra = Math.abs(3000 - bird.getDistance() * 10)+(int)(Math.random()*1000);
 
 				if (extra <= 0) {
 					extra = 0;
@@ -1017,9 +980,7 @@ public class GamePlay extends ViewGroup implements Runnable {
 			return false;
 		}
 
-		if (Coin.money >= 100) {
-			return true;
-		}
+
 		return false;
 	}
 

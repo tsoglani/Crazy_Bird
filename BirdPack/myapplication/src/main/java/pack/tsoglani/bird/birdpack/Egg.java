@@ -44,23 +44,23 @@ public class Egg extends View implements Runnable, Enemy {
 		return false;
 	}
 
-	private void onEggPointer() {
-		context.runOnUiThread(new Thread() {
-			public void run() {
-				context.getGamePlay().visibleEggPointer();
-			}
-		});
-
-	}
-
-	private void offEggPointer() {
-		context.runOnUiThread(new Thread() {
-			public void run() {
-				context.getGamePlay().invisibleEggPointer();
-			}
-		});
-
-	}
+//	private void onEggPointer() {
+//		context.runOnUiThread(new Thread() {
+//			public void run() {
+//				context.getGamePlay().visibleEggPointer();
+//			}
+//		});
+//
+//	}
+//
+//	private void offEggPointer() {
+//		context.runOnUiThread(new Thread() {
+//			public void run() {
+//				context.getGamePlay().invisibleEggPointer();
+//			}
+//		});
+//
+//	}
 
 	public void newEgg() {
 		GamePlay.enemies.add(this);
@@ -81,11 +81,6 @@ public class Egg extends View implements Runnable, Enemy {
 	public void run() {
 		Log.e("egg run", "run egg");
 		isRunning = true;
-		context.runOnUiThread(new Thread() {
-			public void run() {
-				context.getGamePlay().eggPointer.setY(getY());
-			}
-		});
 
 		boolean isVisibleEggPointer = true;
 		while (true) {
@@ -98,22 +93,7 @@ public class Egg extends View implements Runnable, Enemy {
 					continue;
 				}
 				
-				if (!context.getGamePlay().getBounds()
-						.contains(this.getBounds())) {
-					onEggPointer();
-					if (isVisibleEggPointer) {
-						context.getGamePlay().setEggPointerColor(
-								context.getResources().getColor(
-										R.color.holo_red_dark));
-					} else {
-						context.getGamePlay().setEggPointerColor(
-								context.getResources().getColor(
-										R.color.holo_red_light));
-					}
-					isVisibleEggPointer = !isVisibleEggPointer;
-				} else {
-					offEggPointer();
-				}
+
 
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

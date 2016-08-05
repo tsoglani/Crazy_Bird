@@ -21,7 +21,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 public class GamePlay extends ViewGroup implements Runnable {
-	private static Bird bird;
+	protected static Bird bird;
 	public static ArrayList<Enemy> enemies;
 	public static int width, height;
 	private GameActivity context;
@@ -48,7 +48,7 @@ public class GamePlay extends ViewGroup implements Runnable {
 	public static int gameSleep = defGameSleep, birdSleep = defBirdSleep,
 			eggSleep = defEggSleep, birdSleepToFall = difBirdSleepToFall;
 	public static int eggRation;
-	private int tubeRation = 2500, eggPointerColor = 0,
+	private int tubeRation =2500, eggPointerColor = 0,
 			coinRation = tubeRation;
 	private Egg[] eggs = new Egg[3];// egg1, egg2;
 	private Coin[] coins = new Coin[3];// coin1, coin2, coin3;
@@ -358,7 +358,7 @@ public class GamePlay extends ViewGroup implements Runnable {
 
 	public void gameOver() {
 		try {
-			// Log.e("gameOver", "gameOver");
+			// Log.e("gameOver", "gameOver");bird
 			AlertDialog.Builder alert2 = null;
 			AlertDialog.Builder alert;
 			alert = new AlertDialog.Builder(context);
@@ -936,7 +936,7 @@ public class GamePlay extends ViewGroup implements Runnable {
 				}
 				int extra = 0;
 
-				extra = 3000 - bird.getDistance() * 10;
+				extra = Math.abs(3000 - bird.getDistance() * 10)+(int)(Math.random()*1000);
 
 				if (extra <= 0) {
 					extra = 0;
