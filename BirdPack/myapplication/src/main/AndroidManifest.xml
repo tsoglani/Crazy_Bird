@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="pack.tsoglani.bird.birdpack">
+    package="pack.tsoglani.bird.game">
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-feature android:name="android.hardware.type.watch" />
@@ -13,14 +13,14 @@
 android:largeHeap="true"
         android:theme="@android:style/Theme.DeviceDefault">
         <activity
-            android:name="pack.tsoglani.bird.birdpack.GameActivity"
+            android:name="pack.tsoglani.bird.game.GameActivity"
             android:label="@string/app_name"
             android:noHistory="true"
 
             >
         </activity>
         <activity
-            android:name="pack.tsoglani.bird.birdpack.MainActivity"
+            android:name="pack.tsoglani.bird.game.MainActivity"
             android:label="@string/app_name"
             >
 
@@ -31,23 +31,23 @@ android:largeHeap="true"
             </intent-filter>
         </activity>
         <activity
-            android:name="pack.tsoglani.bird.birdpack.UpgradeActivity"
+            android:name="pack.tsoglani.bird.game.UpgradeActivity"
             android:label="Game Upgrades "
              >
         </activity>
         <activity
-            android:name="pack.tsoglani.bird.birdpack.UpgradeSelectedItemMenu"
+            android:name="pack.tsoglani.bird.game.UpgradeSelectedItemMenu"
             android:label="Game Upgrades "
             >
         </activity>
         <activity
-            android:name="pack.tsoglani.bird.birdpack.MissionActivity"
+            android:name="pack.tsoglani.bird.game.MissionActivity"
             android:label="Game Missions "
 
            >
         </activity>
         <activity
-            android:name="pack.tsoglani.bird.birdpack.InfoActivity"
+            android:name="pack.tsoglani.bird.game.InfoActivity"
             android:label="Game Information"
             >
         </activity>
