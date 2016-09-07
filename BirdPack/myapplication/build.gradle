@@ -6,7 +6,7 @@ android {
     buildToolsVersion "24.0.0"
 
     defaultConfig {
-        applicationId "pack.tsoglani.bird.game"
+        applicationId "nick.tsoglanakos.bird.pack"
         minSdkVersion 21
         targetSdkVersion 24
         versionCode 1

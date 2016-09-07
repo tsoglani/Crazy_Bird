@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="pack.tsoglani.bird.game">
+    package="nick.tsoglanakos.bird.pack">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -12,14 +12,14 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="pack.tsoglani.bird.game.GameActivity"
+            android:name="nick.tsoglanakos.bird.pack.GameActivity"
             android:label="@string/app_name"
             android:noHistory="true"
 
             >
         </activity>
         <activity
-            android:name="pack.tsoglani.bird.game.MenuActivity"
+            android:name="nick.tsoglanakos.bird.pack.MenuActivity"
             android:label="@string/app_name"
             android:noHistory="true"
             >
@@ -31,22 +31,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="pack.tsoglani.bird.game.UpgradeActivity"
+            android:name="nick.tsoglanakos.bird.pack.UpgradeActivity"
             android:label="Game Upgrades "
             android:noHistory="true" >
         </activity>
         <activity
-            android:name="pack.tsoglani.bird.game.UpgradeSelectedItemMenu"
+            android:name="nick.tsoglanakos.bird.pack.UpgradeSelectedItemMenu"
             android:label="Game Upgrades "
             android:noHistory="true" >
         </activity>
         <activity
-            android:name="pack.tsoglani.bird.game.MissionActivity"
+            android:name="nick.tsoglanakos.bird.pack.MissionActivity"
             android:label="Game Missions "
             android:noHistory="true" >
         </activity>
         <activity
-            android:name="pack.tsoglani.bird.game.InfoActivity"
+            android:name="nick.tsoglanakos.bird.pack.InfoActivity"
             android:label="Game Information"
             android:noHistory="true" >
         </activity>
